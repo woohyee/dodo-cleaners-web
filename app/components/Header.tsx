@@ -53,8 +53,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* 로고 */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-4 group">
-              <div className="w-14 h-14 relative">
+            <Link
+              href="/"
+              className="flex items-center space-x-2 md:space-x-4 group"
+            >
+              <div className="w-10 h-10 md:w-14 md:h-14 relative">
                 <Image
                   src="/dodologo.jpg"
                   alt="Dodo Cleaners Logo"
@@ -63,10 +66,7 @@ const Header = () => {
                   className="rounded-full shadow-md group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
-              <span
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white group-hover:text-gray-200 transition-colors duration-200"
-                style={{ fontSize: '2.5rem' }}
-              >
+              <span className="text-xl md:text-3xl lg:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-200">
                 dodo cleaners
               </span>
             </Link>
@@ -93,18 +93,17 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white 
-                       hover:text-gray-200 focus:outline-none transition-colors duration-200"
+              className="inline-flex items-center justify-center p-1.5 rounded-md text-white hover:text-gray-200 focus:outline-none transition-colors duration-200"
               aria-label="Main menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* 모바일 메뉴 드롭다운 */}
         <div
-          className={`absolute right-4 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white rounded-lg shadow-lg ${
+          className={`absolute right-2 w-36 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white rounded-lg shadow-lg ${
             isMenuOpen
               ? 'max-h-48 opacity-100'
               : 'max-h-0 opacity-0 pointer-events-none'
