@@ -18,6 +18,24 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // 메뉴 자동 닫힘 효과 추가
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    if (isMenuOpen) {
+      timeoutId = setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 4000); // 4초 후 닫힘
+    }
+
+    // 컴포넌트 언마운트나 isMenuOpen 변경 시 타이머 정리
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isMenuOpen]);
+
   const menuItems = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
@@ -72,7 +90,7 @@ const Header = () => {
           </div>
 
           {/* 모바일 메뉴 버튼 */}
-          <div className="flex md:hidden">
+          <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-white 
@@ -86,19 +104,18 @@ const Header = () => {
 
         {/* 모바일 메뉴 드롭다운 */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
+          className={`absolute right-4 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white rounded-lg shadow-lg ${
             isMenuOpen
-              ? 'max-h-64 opacity-100'
+              ? 'max-h-48 opacity-100'
               : 'max-h-0 opacity-0 pointer-events-none'
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 border-t border-blue-800">
+          <div className="py-1 space-y-0.5">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-3 py-2 text-base font-medium text-white hover:text-gray-200 
-                         hover:bg-blue-800 rounded-md transition-colors duration-200"
+                className="block px-4 py-1.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
