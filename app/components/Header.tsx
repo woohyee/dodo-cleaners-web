@@ -35,17 +35,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* 로고 */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 relative">
+            <Link href="/" className="flex items-center space-x-4 group">
+              <div className="w-14 h-14 relative">
                 <Image
                   src="/dodologo.jpg"
                   alt="Dodo Cleaners Logo"
-                  width={40}
-                  height={40}
+                  width={56}
+                  height={56}
                   className="rounded-full shadow-md group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
-              <span className="text-lg md:text-xl font-semibold text-white group-hover:text-gray-200 transition-colors duration-200">
+              <span
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white group-hover:text-gray-200 transition-colors duration-200"
+                style={{ fontSize: '2.5rem' }}
+              >
                 dodo cleaners
               </span>
             </Link>

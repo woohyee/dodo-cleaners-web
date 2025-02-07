@@ -66,8 +66,19 @@ export default function Services() {
   ];
 
   return (
-    <div className="space-y-8 mt-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Our Services</h1>
+    <div className="space-y-8 mt-2">
+      <div className="flex items-center justify-center gap-6 mb-12">
+        <Image
+          src="/dodoservice.jpg"
+          alt="Services"
+          width={80}
+          height={80}
+          className="rounded-full shadow-lg"
+        />
+        <h1 className="text-4xl md:text-5xl font-bold text-center">
+          Our Services
+        </h1>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-y-12">
         {services.map((service, index) => (

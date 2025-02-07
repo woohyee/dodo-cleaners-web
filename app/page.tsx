@@ -13,11 +13,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 mt-2">
       <section className="text-center py-6 md:py-8 bg-gradient-to-b from-blue-50 to-white rounded-xl shadow-sm px-4 md:px-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-blue-900">
-          Welcome to dodo cleaners
-        </h1>
+        <div className="flex items-center justify-center gap-6">
+          <Image
+            src="/dodowelcome.jpg"
+            alt="Welcome"
+            width={100}
+            height={100}
+            className="rounded-full shadow-lg"
+          />
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-blue-900">
+            Welcome to dodo cleaners
+          </h1>
+        </div>
         <p className="text-lg md:text-xl text-blue-800 max-w-2xl mx-auto">
           Professional wet cleaning services
         </p>
