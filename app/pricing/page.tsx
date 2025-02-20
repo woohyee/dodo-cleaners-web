@@ -43,15 +43,15 @@ export default function Pricing() {
         <table className="w-full">
           <thead>
             <tr className="bg-blue-100">
-              <th className="p-2 text-left text-lg font-bold">Service</th>
-              <th className="p-2 text-left text-lg font-bold">Price</th>
+              <th className="p-2 text-left text-lg font-bold pl-16">Service</th>
+              <th className="p-2 text-right text-lg font-bold pr-16">Price</th>
             </tr>
           </thead>
           <tbody>
             {services.map((service, index) => (
               <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
-                <td className="py-2 pl-8 pr-5">
-                  <div className="flex items-center space-x-6">
+                <td className="py-2 pl-16 pr-5">
+                  <div className="flex items-center space-x-6 ml-8">
                     <Image
                       src={service.image}
                       alt={service.name}
@@ -62,7 +62,7 @@ export default function Pricing() {
                     <span>{service.name}</span>
                   </div>
                 </td>
-                <td className="py-2 pl-2 pr-5">{service.price}</td>
+                <td className="py-2 pr-16 text-right">{service.price}</td>
               </tr>
             ))}
           </tbody>

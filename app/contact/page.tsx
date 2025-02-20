@@ -1,4 +1,3 @@
-import { MapPin, Phone, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -34,15 +33,33 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6 p-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="flex-shrink-0 mt-1" />
+                <Image
+                  src="/locationpin.png"
+                  alt="Location"
+                  width={32}
+                  height={32}
+                  className="flex-shrink-0 mt-1"
+                />
                 <p>2500 Appleby Line Unit E1, Burlington, ON L7L 0A2</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="flex-shrink-0" />
+                <Image
+                  src="/telephone.png"
+                  alt="Phone"
+                  width={32}
+                  height={32}
+                  className="flex-shrink-0"
+                />
                 <p>905-315-9995</p>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock className="flex-shrink-0 mt-1" />
+                <Image
+                  src="/opensign.png"
+                  alt="Hours"
+                  width={32}
+                  height={32}
+                  className="flex-shrink-0 mt-1"
+                />
                 <div className="space-y-2">
                   <p>Mon-Fri: 09:30am - 06:00pm</p>
                   <p>Sat: 10:00am - 03:00pm</p>
