@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description:
       'View our competitive pricing for wet cleaning services at Dodo Cleaners. Special offers and loyalty program available for our valued customers.',
   },
+  metadataBase: new URL('http://localhost:3000'),
 };
 
 export default function Pricing() {
@@ -21,6 +22,7 @@ export default function Pricing() {
     { name: 'Dress', price: '$17.50', image: '/dress.jpg' },
     { name: 'Coat', price: '$22.95', image: '/coat.jpg' },
     { name: 'Comforter', price: '$33.95', image: '/comforterduvet.jpg' },
+    { name: 'Pants Hemming', price: '$13.00', image: '/hemmingpants.jpg' },
   ];
 
   return (
@@ -49,12 +51,12 @@ export default function Pricing() {
             {services.map((service, index) => (
               <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
                 <td className="py-2 pl-8 pr-5">
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-6">
                     <Image
                       src={service.image}
                       alt={service.name}
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="rounded-full"
                     />
                     <span>{service.name}</span>
