@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       'View our competitive pricing for wet cleaning services at Dodo Cleaners. Special offers and loyalty program available for our valued customers.',
   },
-  metadataBase: new URL('http://localhost:3000'),
+
 };
 
 export default function Pricing() {
