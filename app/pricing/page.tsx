@@ -21,6 +21,7 @@ export default function Pricing() {
     { name: 'Dress', price: '$17.50', image: '/dress.jpg' },
     { name: 'Coat', price: '$22.95', image: '/coat.jpg' },
     { name: 'Comforter', price: '$33.95', image: '/comforterduvet.jpg' },
+    { name: 'Pants Hemming', price: '$13.00', image: '/hemmingpants.jpg' },
   ];
 
   return (
@@ -60,7 +61,7 @@ export default function Pricing() {
                     <span>{service.name}</span>
                   </div>
                 </td>
-                <td className="py-2 pl-2 pr-5">{service.price}</td>
+                <td className="py-2 pl-8 pr-5 md:pl-2">{service.price}</td>
               </tr>
             ))}
           </tbody>
