@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { supabase } from '@/lib/supabase'
-import { CustomerRegistration } from '@/types/stamp'
-import CustomerForm from '@/app/components/stamp/CustomerForm'
-import Fireworks from '@/app/components/stamp/Fireworks'
-import CountUp from '@/app/components/stamp/CountUp'
+import { supabase } from '../../lib/supabase'
+import { CustomerRegistration } from '../../types/stamp'
+import CustomerForm from '../components/stamp/CustomerForm'
+import Fireworks from '../components/stamp/Fireworks'
+import CountUp from '../components/stamp/CountUp'
 
 export default function EventPage() {
   const [completed, setCompleted] = useState(false)

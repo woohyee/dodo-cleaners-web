@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CustomerRegistration } from '@/types/stamp'
+import { CustomerRegistration } from '../../../types/stamp'
 import FloatingInput from './FloatingInput'
 
 interface CustomerFormProps {
