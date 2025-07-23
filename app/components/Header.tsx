@@ -40,6 +40,7 @@ const Header = () => {
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
     { href: '/pricing', label: 'Pricing' },
+    { href: '/event', label: 'Event' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
