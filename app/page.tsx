@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -31,6 +32,39 @@ export default function Home() {
           Professional wet cleaning services
         </p>
       </section>
+
+      {/* Digital Stamp Service Banner */}
+      <Link href="/event">
+        <section className="mx-4 md:mx-0 -mt-2 mb-4 md:mb-6">
+          <div className="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] cursor-pointer p-4 md:p-6 border-2 border-orange-300">
+            <div className="flex items-center justify-center gap-3 md:gap-4">
+              <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+                <Image
+                  src="/TapandStamp.png"
+                  alt="Tap & Stamp Logo"
+                  width={64}
+                  height={64}
+                  className="object-contain animate-pulse"
+                />
+              </div>
+              <div className="text-center">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 drop-shadow-lg">
+                  NEW! Digital Stamp Service
+                </h2>
+                <p className="text-sm md:text-base lg:text-lg text-orange-50 font-medium">
+                  Collect stamps and earn rewards with every visit
+                </p>
+              </div>
+              <span className="text-3xl md:text-4xl animate-bounce">🎉</span>
+            </div>
+            <div className="text-center mt-2">
+              <span className="inline-block bg-white/90 text-orange-600 px-4 py-1 rounded-full text-sm font-bold hover:bg-white transition-colors">
+                Learn More →
+              </span>
+            </div>
+          </div>
+        </section>
+      </Link>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0">
         <div className="bg-gradient-to-br from-blue-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">

@@ -139,7 +139,7 @@ export default function EventPage() {
                       Thank you for joining! 🌟
                     </p>
                     <p className="text-sm text-gray-600 mt-2">
-                      정식 오픈: 8월 1일 🚀
+                      정식 오픈: 10월 1일 🚀
                     </p>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export default function EventPage() {
                 </h1>
                 <div className="bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 rounded-lg p-3 mb-4">
                   <p className="text-blue-700 font-bold text-sm mb-1">
-                    8월 1일 정식 오픈 기념!
+                    10월 1일 정식 오픈 기념!
                   </p>
                   <p className="text-blue-600 text-xs">
                     지금 등록하면 스탬프 1개 무료 증정! 🎁
