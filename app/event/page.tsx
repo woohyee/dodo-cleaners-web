@@ -16,105 +16,84 @@ export default function TapStampPage() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-orange-600 mb-4">
-            Tap & Stamp
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Now we start the <span className="text-blue-600">Digital Stampbook</span> Service!
           </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Digital stamp service for Dodo Cleaners
-          </p>
           <p className="text-lg text-orange-600 font-semibold mt-2">
-            Coming October 1st, 2025
+            Launching October 1st, 2025
           </p>
         </div>
 
-        {/* What is Tap & Stamp */}
-        <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            What is Tap & Stamp?
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Tap & Stamp is our new digital loyalty program that replaces traditional paper stamp cards.
-            Every time you visit Dodo Cleaners, simply tap your phone to collect digital stamps and earn rewards.
-          </p>
-        </section>
-
         {/* How it works */}
         <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-orange-600 mb-6">
             How It Works
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-orange-600">1</span>
+          <div className="space-y-4">
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-lg font-bold text-orange-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Visit Dodo Cleaners</h3>
-              <p className="text-gray-600">
-                Bring your clothes to our store for professional wet cleaning service
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Pay <span className="font-bold text-orange-600">$10 or more</span> to earn a stamp
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-orange-600">2</span>
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-lg font-bold text-orange-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Tap Your Phone</h3>
-              <p className="text-gray-600">
-                Use your smartphone to tap and collect a digital stamp
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-orange-600">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Earn Rewards</h3>
-              <p className="text-gray-600">
-                Collect stamps and redeem them for exclusive rewards and discounts
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Just tap your phone — your stamp is added automatically
               </p>
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* Rewards */}
         <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-            Benefits
+          <h2 className="text-2xl md:text-3xl font-bold text-green-600 mb-6">
+            Rewards
+          </h2>
+          <div className="space-y-4">
+            <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+              <p className="text-lg text-gray-700 leading-relaxed mb-2">
+                A new reward for every <span className="font-bold text-red-600 text-2xl">5</span> stamps!
+              </p>
+            </div>
+            <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+              <p className="text-lg text-gray-700 leading-relaxed mb-2">
+                Collect <span className="font-bold text-red-600 text-2xl">30</span> stamps to become a <span className="font-bold text-purple-600">VIP</span> member
+              </p>
+              <p className="text-xl text-purple-700 font-semibold text-center mt-3">
+                and enjoy 10% off for 3 months
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Tap & Stamp */}
+        <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-orange-600 mb-6">
+            Why Tap & Stamp?
           </h2>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-6 h-6 bg-orange-500 rounded-full flex-shrink-0 mt-1"></div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">No More Paper Cards</h3>
-                <p className="text-gray-600">
-                  Everything is digital. Never lose your stamp card again.
-                </p>
-              </div>
+              <p className="text-lg text-gray-700">
+                No app installation required
+              </p>
             </div>
             <div className="flex items-start gap-4">
               <div className="w-6 h-6 bg-orange-500 rounded-full flex-shrink-0 mt-1"></div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">Track Your Progress</h3>
-                <p className="text-gray-600">
-                  See your stamp collection and rewards status anytime on your phone.
-                </p>
-              </div>
+              <p className="text-lg text-gray-700">
+                Never lose your stamp card again
+              </p>
             </div>
             <div className="flex items-start gap-4">
               <div className="w-6 h-6 bg-orange-500 rounded-full flex-shrink-0 mt-1"></div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">Exclusive Rewards</h3>
-                <p className="text-gray-600">
-                  Earn special discounts and VIP benefits as a loyal customer.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-6 h-6 bg-orange-500 rounded-full flex-shrink-0 mt-1"></div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">Eco-Friendly</h3>
-                <p className="text-gray-600">
-                  Digital stamps mean less paper waste, better for the environment.
-                </p>
-              </div>
+              <p className="text-lg text-gray-700">
+                Rewards are managed automatically
+              </p>
             </div>
           </div>
         </section>
