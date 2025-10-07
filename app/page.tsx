@@ -101,7 +101,7 @@ export default function Home() {
 
       <section className="relative group px-4 md:px-8 lg:px-12 -mt-4 md:-mt-8">
         <div className="text-center mb-4">
-          <h2 className={`text-2xl md:text-3xl font-bold text-purple-400 ${inter.className}`}>
+          <h2 className={`text-2xl md:text-3xl font-bold text-purple-800 ${inter.className}`}>
             Eco-friendly wet cleaning service
           </h2>
         </div>
