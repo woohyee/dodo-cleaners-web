@@ -97,6 +97,11 @@ export default function Home() {
       </section>
 
       <section className="relative group px-4 md:px-8 lg:px-12 -mt-4 md:-mt-8">
+        <div className="text-center mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            Eco-friendly wet cleaning service
+          </h2>
+        </div>
         <div className="relative overflow-hidden rounded-xl max-w-5xl mx-auto">
           <Image
             src="/cleaners.image1.png"
