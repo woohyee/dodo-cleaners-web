@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   description:
@@ -98,7 +101,7 @@ export default function Home() {
 
       <section className="relative group px-4 md:px-8 lg:px-12 -mt-4 md:-mt-8">
         <div className="text-center mb-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+          <h2 className={`text-2xl md:text-3xl font-bold text-purple-400 ${inter.className}`}>
             Eco-friendly wet cleaning service
           </h2>
         </div>
