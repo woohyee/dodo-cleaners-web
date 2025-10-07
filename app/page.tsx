@@ -37,13 +37,13 @@ export default function Home() {
       <Link href="/event">
         <section className="mx-4 md:mx-0 -mt-2 mb-4 md:mb-6">
           <div className="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] cursor-pointer p-4 md:p-6 border-2 border-orange-300">
-            <div className="flex items-center justify-center gap-3 md:gap-4">
-              <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="relative w-20 h-20 md:w-28 md:h-28 flex-shrink-0">
                 <Image
                   src="/TapandStamp.png"
                   alt="Tap & Stamp Logo"
-                  width={64}
-                  height={64}
+                  width={112}
+                  height={112}
                   className="object-contain animate-pulse"
                 />
               </div>
@@ -55,7 +55,6 @@ export default function Home() {
                   Collect stamps and earn rewards with every visit
                 </p>
               </div>
-              <span className="text-3xl md:text-4xl animate-bounce">🎉</span>
             </div>
             <div className="text-center mt-2">
               <span className="inline-block bg-white/90 text-orange-600 px-4 py-1 rounded-full text-sm font-bold hover:bg-white transition-colors">
