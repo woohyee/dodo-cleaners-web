@@ -34,36 +34,37 @@ export default function Home() {
       </section>
 
       {/* Digital Stamp Service Banner */}
-      <Link href="/event">
-        <section className="mx-4 md:mx-0 -mt-2 mb-4 md:mb-6">
-          <div className="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] cursor-pointer p-4 md:p-6 border-2 border-orange-300">
-            <div className="flex items-center justify-center gap-4 md:gap-6">
-              <div className="relative w-20 h-20 md:w-28 md:h-28 flex-shrink-0">
+      <section className="mx-4 md:mx-0 -mt-2 mb-4 md:mb-6">
+        <div className="max-w-4xl mx-auto bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 rounded-xl shadow-lg p-4 md:p-6 border-2 border-orange-300">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
                 <Image
                   src="/TapandStamp.png"
                   alt="Tap & Stamp Logo"
-                  width={112}
-                  height={112}
-                  className="object-contain animate-pulse"
+                  width={80}
+                  height={80}
+                  className="object-contain"
                 />
               </div>
-              <div className="text-center">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 drop-shadow-lg">
+              <div>
+                <h2 className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
                   NEW! Digital Stamp Service
                 </h2>
-                <p className="text-sm md:text-base lg:text-lg text-orange-50 font-medium">
-                  Collect stamps and earn rewards with every visit
+                <p className="text-sm text-orange-50">
+                  Starting October 1st, 2025
                 </p>
               </div>
             </div>
-            <div className="text-center mt-2">
-              <span className="inline-block bg-white/90 text-orange-600 px-4 py-1 rounded-full text-sm font-bold hover:bg-white transition-colors">
-                Learn More →
-              </span>
-            </div>
+            <Link
+              href="/event"
+              className="px-4 py-2 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap"
+            >
+              Learn More
+            </Link>
           </div>
-        </section>
-      </Link>
+        </div>
+      </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0">
         <div className="bg-gradient-to-br from-blue-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
@@ -96,13 +97,13 @@ export default function Home() {
       </section>
 
       <section className="relative group px-4 md:px-8 lg:px-12 -mt-4 md:-mt-8">
-        <div className="relative overflow-hidden rounded-xl aspect-[16/9] max-w-5xl mx-auto">
+        <div className="relative overflow-hidden rounded-xl max-w-5xl mx-auto">
           <Image
-            src="/water.jpg"
-            alt="Water bubbles representing eco-friendly wet cleaning"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            src="/cleaners.image1.png"
+            alt="Eco-friendly wet cleaning service"
+            width={1920}
+            height={1080}
+            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
             priority
             quality={85}
           />
