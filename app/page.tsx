@@ -25,7 +25,7 @@ export default function Home() {
             alt="Welcome"
             width={100}
             height={100}
-            className="rounded-full shadow-lg"
+            className="rounded-full shadow-lg animate-wave"
           />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-blue-900">
             Welcome to dodo cleaners
