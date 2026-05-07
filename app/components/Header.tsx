@@ -45,6 +45,15 @@ const Header = () => {
   ];
 
   return (
+    <>
+      {/* 모바일 메뉴 backdrop — 외부 탭 시 닫힘 */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'shadow-uber-card' : ''
@@ -118,9 +127,9 @@ const Header = () => {
 
         {/* 모바일 메뉴 드롭다운 — Liquid Glass */}
         <div
-          className={`absolute right-2 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/40 rounded-lg shadow-uber-card ${
+          className={`absolute right-2 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/40 rounded-lg shadow-uber-card overflow-hidden ${
             isMenuOpen
-              ? 'max-h-56 opacity-100'
+              ? 'max-h-72 opacity-100'
               : 'max-h-0 opacity-0 pointer-events-none'
           }`}
         >
@@ -135,10 +144,20 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
+            <div className="border-t border-white/40 mt-1 pt-1">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-body-gray hover:bg-white/40 transition-colors duration-200"
+              >
+                <X size={14} />
+                Exit
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
+    </>
   );
 };
 
