@@ -46,12 +46,12 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 overflow-hidden ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'shadow-uber-card' : ''
       }`}
     >
       {/* 배경: cleaners 이미지 + 다크 브라운 오버레이 + Ken Burns 애니메이션 */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/cleaners.image1.png"
           alt=""

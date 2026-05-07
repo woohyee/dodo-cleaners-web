@@ -54,7 +54,7 @@ export default function Home() {
               'linear-gradient(135deg, #1A1614 0%, #2A2522 50%, #181513 100%)',
           }}
         >
-          <div className="flex items-center justify-between gap-4 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 relative z-10">
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0 flex flex-col items-center w-14 md:w-16">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -70,7 +70,7 @@ export default function Home() {
                   ohmystamp
                 </p>
               </div>
-              <div>
+              <div className="flex-1 min-w-0">
                 <h2 className="text-base md:text-lg font-bold text-uber-white tracking-tight">
                   NEW! Digital Stamp Service
                 </h2>
@@ -81,7 +81,7 @@ export default function Home() {
             </div>
             <Link
               href="/event"
-              className="px-5 py-2 bg-uber-white text-uber-black rounded-pill text-sm font-medium hover:bg-hover-gray transition-colors whitespace-nowrap"
+              className="self-stretch md:self-auto text-center px-5 py-2 bg-uber-white text-uber-black rounded-pill text-sm font-medium hover:bg-hover-gray transition-colors whitespace-nowrap"
             >
               Learn More
             </Link>
