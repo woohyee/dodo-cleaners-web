@@ -124,39 +124,40 @@ const Header = () => {
             </button>
           </div>
         </div>
-
-        {/* 모바일 메뉴 드롭다운 — Liquid Glass */}
-        <div
-          className={`absolute right-2 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/40 rounded-lg shadow-uber-card overflow-hidden ${
-            isMenuOpen
-              ? 'max-h-72 opacity-100'
-              : 'max-h-0 opacity-0 pointer-events-none'
-          }`}
-        >
-          <div className="py-2 space-y-0.5">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-2 text-sm font-medium text-uber-black hover:bg-white/40 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="border-t border-white/40 mt-1 pt-1">
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-body-gray hover:bg-white/40 transition-colors duration-200"
-              >
-                <X size={14} />
-                Exit
-              </button>
-            </div>
-          </div>
-        </div>
       </nav>
     </header>
+
+    {/* 모바일 메뉴 드롭다운 — header 밖으로 분리 (stacking context 회피) */}
+    <div
+      className={`fixed top-[76px] right-2 w-40 z-[60] md:hidden transition-all duration-300 ease-in-out bg-white/80 backdrop-blur-xl backdrop-saturate-150 border border-white/40 rounded-lg shadow-uber-card overflow-hidden ${
+        isMenuOpen
+          ? 'max-h-72 opacity-100'
+          : 'max-h-0 opacity-0 pointer-events-none'
+      }`}
+    >
+      <div className="py-2 space-y-0.5">
+        {menuItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="block px-4 py-2 text-sm font-medium text-uber-black hover:bg-white/40 transition-colors duration-200"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item.label}
+          </Link>
+        ))}
+        <div className="border-t border-white/40 mt-1 pt-1">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(false)}
+            className="w-full flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-body-gray hover:bg-white/40 transition-colors duration-200"
+          >
+            <X size={14} />
+            Exit
+          </button>
+        </div>
+      </div>
+    </div>
     </>
   );
 };
