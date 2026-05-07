@@ -44,14 +44,14 @@ const Header = () => {
     { href: '/contact', label: 'Contact Us' },
   ];
 
-  // Exit: 브라우저 닫기 시도 → 안 되면 /bye 페이지로 이동
+  // Exit: 브라우저 닫기 시도 → 안 되면 Google로 이동
   const handleExit = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(false);
     window.close();
-    // window.close()가 차단된 경우 (브라우저 보안 정책) — bye 페이지로 fallback
+    // window.close()가 차단된 경우 (브라우저 보안 정책) — Google로 fallback
     setTimeout(() => {
-      window.location.href = '/bye';
+      window.location.href = 'https://www.google.com';
     }, 100);
   };
 
@@ -146,9 +146,9 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            {/* Exit — 웹사이트 종료 (window.close() → /bye fallback) */}
+            {/* Exit — 웹사이트 종료 (window.close() → Google fallback) */}
             <a
-              href="/bye"
+              href="https://www.google.com"
               onClick={handleExit}
               className="block px-4 py-2 text-sm font-medium text-red-700 hover:bg-white/40 transition-colors duration-200 border-t border-white/40 mt-1 pt-2"
             >
