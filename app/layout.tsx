@@ -67,11 +67,21 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet"
+        />
         <JsonLd />
       </head>
       <body className={inter.className}>
         <Header />
-        <main className="container mx-auto px-4 py-8 pt-[100px]">
+        <main className="container mx-auto px-4 py-4 pt-[96px] md:pt-[112px]">
           {children}
         </main>
         <Footer />

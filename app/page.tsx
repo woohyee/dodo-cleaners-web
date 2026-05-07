@@ -2,8 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
 const inter = Inter({ subsets: ['latin'] });
+
+const playfairH1Style = {
+  fontFamily: "'Playfair Display', Georgia, serif",
+  fontWeight: 600,
+  letterSpacing: '-0.5px',
+} as const;
+
+const playfairSubtitleStyle = {
+  fontFamily: "'Playfair Display', Georgia, serif",
+  fontStyle: 'italic',
+  fontWeight: 400,
+} as const;
 
 export const metadata: Metadata = {
   description:
@@ -17,51 +28,60 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="space-y-8 mt-2">
-      <section className="text-center py-6 md:py-8 bg-gradient-to-b from-blue-50 to-white rounded-xl shadow-sm px-4 md:px-8">
-        <div className="flex items-center justify-center gap-6">
-          <Image
-            src="/dodowelcome.jpg"
-            alt="Welcome"
-            width={100}
-            height={100}
-            className="rounded-full shadow-lg animate-wave"
-          />
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-blue-900">
-            Welcome to dodo cleaners
-          </h1>
-        </div>
-        <p className="text-lg md:text-xl text-blue-800 max-w-2xl mx-auto">
+    <div className="space-y-6 mt-2">
+      {/* Hero */}
+      <section className="text-center py-2 md:py-3 px-4 md:px-8">
+        <h1
+          className="text-2xl md:text-3xl lg:text-4xl text-uber-black mb-2 md:mb-3"
+          style={playfairH1Style}
+        >
+          Welcome to dodo cleaners
+        </h1>
+        <p
+          className="text-sm md:text-base text-body-gray max-w-2xl mx-auto"
+          style={playfairSubtitleStyle}
+        >
           Professional wet cleaning services
         </p>
       </section>
 
-      {/* Digital Stamp Service Banner */}
-      <section className="mx-4 md:mx-0 -mt-2 mb-4 md:mb-6">
-        <div className="max-w-4xl mx-auto bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 rounded-xl shadow-lg p-4 md:p-6 border-2 border-orange-300">
-          <div className="flex items-center justify-between gap-4">
+      {/* Digital Stamp Service Banner — 따뜻한 다크 그라데이션 + 웜 글로우 */}
+      <section className="mx-4 md:mx-0">
+        <div
+          className="max-w-4xl mx-auto rounded-xl p-5 md:p-6 relative overflow-hidden before:content-[''] before:absolute before:top-[-100px] before:left-[8%] before:w-[280px] before:h-[280px] before:bg-[#8A6A40] before:blur-[70px] before:opacity-30 before:pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(135deg, #1A1614 0%, #2A2522 50%, #181513 100%)',
+          }}
+        >
+          <div className="flex items-center justify-between gap-4 relative z-10">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-                <Image
-                  src="/TapandStamp.png"
-                  alt="Tap & Stamp Logo"
-                  width={80}
-                  height={80}
-                  className="object-contain"
-                />
+              <div className="flex-shrink-0 flex flex-col items-center w-14 md:w-16">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/TapandStamp.png"
+                    alt="OhStamp logo"
+                    fill
+                    sizes="64px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <p className="text-[10px] md:text-xs font-bold text-uber-white mt-0.5 tracking-tight">
+                  ohmystamp
+                </p>
               </div>
               <div>
-                <h2 className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
+                <h2 className="text-base md:text-lg font-bold text-uber-white tracking-tight">
                   NEW! Digital Stamp Service
                 </h2>
-                <p className="text-sm text-orange-50">
+                <p className="text-xs md:text-sm text-muted-gray">
                   Starting October 1st, 2025
                 </p>
               </div>
             </div>
             <Link
               href="/event"
-              className="px-4 py-2 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap"
+              className="px-5 py-2 bg-uber-white text-uber-black rounded-pill text-sm font-medium hover:bg-hover-gray transition-colors whitespace-nowrap"
             >
               Learn More
             </Link>
@@ -69,53 +89,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Feature Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0">
-        <div className="bg-gradient-to-br from-blue-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-blue-900">
+        <div className="bg-uber-white p-6 rounded-lg shadow-uber-card">
+          <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-uber-black tracking-tight">
             Expert care
           </h2>
-          <p className="text-sm md:text-base text-blue-700">
+          <p className="text-sm md:text-base text-body-gray leading-relaxed">
             Our experienced staff treats each garment with utmost care and
             attention to detail.
           </p>
         </div>
-        <div className="bg-gradient-to-br from-green-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-green-900">
+        <div className="bg-uber-white p-6 rounded-lg shadow-uber-card">
+          <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-uber-black tracking-tight">
             Eco-friendly
           </h2>
-          <p className="text-sm md:text-base text-green-700">
+          <p className="text-sm md:text-base text-body-gray leading-relaxed">
             We use environmentally friendly cleaning methods and products to
             protect your clothes and the planet.
           </p>
         </div>
-        <div className="bg-gradient-to-br from-purple-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 md:col-span-2 lg:col-span-1">
-          <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-purple-900">
+        <div className="bg-uber-white p-6 rounded-lg shadow-uber-card md:col-span-2 lg:col-span-1">
+          <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-uber-black tracking-tight">
             Quick Service
           </h2>
-          <p className="text-sm md:text-base text-purple-700">
+          <p className="text-sm md:text-base text-body-gray leading-relaxed">
             Fast turnaround times without compromising on quality. Same-day
             service available!
           </p>
         </div>
       </section>
 
-      <section className="relative group px-4 md:px-8 lg:px-12 -mt-4 md:-mt-8">
-        <div className="text-center mb-4">
-          <h2 className={`text-2xl md:text-3xl font-bold text-purple-800 ${inter.className}`}>
+      {/* Eco-friendly hero image */}
+      <section className="px-4 md:px-8 lg:px-12">
+        <div className="text-center mb-6">
+          <h2 className={`text-2xl md:text-3xl font-bold text-uber-black tracking-tight ${inter.className}`}>
             Eco-friendly wet cleaning service
           </h2>
         </div>
-        <div className="relative overflow-hidden rounded-xl max-w-5xl mx-auto">
+        <div className="relative overflow-hidden rounded-xl max-w-5xl mx-auto aspect-[21/9]">
           <Image
             src="/cleaners.image1.png"
             alt="Eco-friendly wet cleaning service"
-            width={1920}
-            height={1080}
-            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+            fill
+            className="object-cover"
             priority
             quality={85}
+            sizes="(max-width: 1024px) 100vw, 1024px"
           />
-          <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors duration-700"></div>
         </div>
       </section>
     </div>

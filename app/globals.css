@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Liquid Glass 효과를 위한 미세한 배경 톤 차이 */
+body {
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 40%, #f5f5f7 100%);
+  min-height: 100vh;
+}

@@ -46,55 +46,69 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-blue-900/95 backdrop-blur-sm shadow-lg' : 'bg-blue-900'
+      className={`fixed w-full top-0 z-50 transition-all duration-300 overflow-hidden ${
+        isScrolled ? 'shadow-uber-card' : ''
       }`}
     >
+      {/* 배경: cleaners 이미지 + 다크 브라운 오버레이 + Ken Burns 애니메이션 */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/cleaners.image1.png"
+          alt=""
+          fill
+          className="object-cover animate-header-scroll"
+          priority
+          sizes="100vw"
+        />
+        {/* 다크 브라운 톤 오버레이 — Liquid Glass 효과를 살림 */}
+        <div
+          className={`absolute inset-0 transition-colors duration-300 ${
+            isScrolled ? 'bg-[#2a1810]/85' : 'bg-[#2a1810]/70'
+          }`}
+        />
+      </div>
+
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* 로고 */}
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* 로고 — dodo 호텔보이 */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="flex items-center space-x-2 md:space-x-4 group"
+              className="flex items-center space-x-2 md:space-x-3 group"
             >
-              <div className="w-10 h-10 md:w-14 md:h-14 relative">
+              <div className="w-10 h-10 md:w-12 md:h-12 relative flex-shrink-0">
                 <Image
-                  src="/dodologo.jpg"
-                  alt="Dodo Cleaners Logo"
-                  width={56}
-                  height={56}
-                  className="rounded-full shadow-md group-hover:scale-105 transition-transform duration-200"
+                  src="/dodowelcome.jpg"
+                  alt="dodo cleaners — bellhop dodo"
+                  width={48}
+                  height={48}
+                  className="rounded-full object-cover"
                 />
               </div>
-              <span className="text-xl md:text-3xl lg:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-200">
+              <span className="text-lg md:text-xl font-bold text-uber-white tracking-tight">
                 dodo cleaners
               </span>
             </Link>
           </div>
 
-          {/* 데스크톱 메뉴 */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          {/* 데스크톱 메뉴 — iOS Liquid Glass 물방울 */}
+          <div className="hidden md:flex md:items-center md:space-x-2">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium 
-                         transition-all duration-200 hover:scale-105 transform relative
-                         after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 
-                         after:bg-white after:scale-x-0 hover:after:scale-x-100 
-                         after:transition-transform after:duration-300"
+                className="px-5 py-2.5 rounded-pill text-sm font-medium text-uber-white bg-gradient-to-b from-white/10 to-transparent backdrop-blur-2xl backdrop-saturate-200 border border-white/20 ring-1 ring-inset ring-white/10 hover:from-white/25 hover:to-white/5 hover:-translate-y-0.5 transition-all duration-300 shadow-[inset_0_2px_5px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.25),0_3px_6px_rgba(0,0,0,0.2),0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-2px_4px_rgba(0,0,0,0.3),0_5px_10px_rgba(0,0,0,0.25),0_18px_38px_rgba(0,0,0,0.45)]"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* 모바일 메뉴 버튼 */}
+          {/* 모바일 메뉴 버튼 — iOS Liquid Glass 물방울 */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-1.5 rounded-md text-white hover:text-gray-200 focus:outline-none transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2.5 rounded-full text-uber-white bg-gradient-to-b from-white/10 to-transparent backdrop-blur-2xl backdrop-saturate-200 border border-white/20 ring-1 ring-inset ring-white/10 hover:from-white/25 hover:to-white/5 focus:outline-none transition-all duration-300 shadow-[inset_0_2px_5px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.25),0_3px_6px_rgba(0,0,0,0.2),0_12px_28px_rgba(0,0,0,0.35)]"
               aria-label="Main menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -102,20 +116,20 @@ const Header = () => {
           </div>
         </div>
 
-        {/* 모바일 메뉴 드롭다운 */}
+        {/* 모바일 메뉴 드롭다운 — Liquid Glass */}
         <div
-          className={`absolute right-2 w-36 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white rounded-lg shadow-lg ${
+          className={`absolute right-2 w-40 -mt-1 md:hidden transition-all duration-300 ease-in-out bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/40 rounded-lg shadow-uber-card ${
             isMenuOpen
-              ? 'max-h-48 opacity-100'
+              ? 'max-h-56 opacity-100'
               : 'max-h-0 opacity-0 pointer-events-none'
           }`}
         >
-          <div className="py-1 space-y-0.5">
+          <div className="py-2 space-y-0.5">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-1.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+                className="block px-4 py-2 text-sm font-medium text-uber-black hover:bg-white/40 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}

@@ -1,26 +1,43 @@
 import Image from 'next/image'
 
+const playfairH1Style = {
+  fontFamily: "'Playfair Display', Georgia, serif",
+  fontWeight: 600,
+  letterSpacing: '-0.5px',
+} as const;
+
+const playfairSubtitleStyle = {
+  fontFamily: "'Playfair Display', Georgia, serif",
+  fontStyle: 'italic',
+  fontWeight: 400,
+} as const;
+
 export default function TapStampPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 py-4 px-4">
+    <div className="min-h-screen bg-white py-4 px-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-24 h-24 mx-auto relative mb-3">
-            <Image
-              src="/TapandStamp.png"
-              alt="Tap & Stamp Logo"
-              width={96}
-              height={96}
-              className="object-contain"
-            />
+          <div className="mx-auto mb-2 w-24">
+            <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <Image
+                src="/TapandStamp.png"
+                alt="OhStamp logo"
+                fill
+                sizes="96px"
+                className="object-cover object-top"
+              />
+            </div>
+            <p className="text-center text-2xl font-bold text-gray-800 mt-1 tracking-tight">
+              ohmystamp
+            </p>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+          <h1
+            className="text-3xl md:text-4xl text-gray-800 mb-3 mt-4"
+            style={playfairH1Style}
+          >
             Now we start the <span className="text-blue-600">Digital Stampbook</span> Service!
           </h1>
-          <p className="text-base md:text-lg text-orange-600 font-semibold">
-            Launching October 1st, 2025
-          </p>
         </div>
 
         {/* What */}
@@ -90,7 +107,7 @@ export default function TapStampPage() {
             </p>
             <p className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 shadow-sm">
               Collect <span className="font-semibold text-blue-600">30 stamps</span> to become a VIP member - and enjoy{' '}
-              <span className="font-semibold text-amber-600">10% off</span> for three months.
+              <span className="font-semibold text-amber-600">10% off</span> for 60 days.
             </p>
           </div>
         </section>
@@ -118,15 +135,6 @@ export default function TapStampPage() {
           </ul>
         </section>
 
-        {/* Coming Soon */}
-        <section className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl shadow-lg p-6 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            Launching October 1st, 2025
-          </h2>
-          <p className="text-base md:text-lg leading-relaxed">
-            Be ready to join our digital stamp program and start earning rewards with every visit!
-          </p>
-        </section>
       </div>
     </div>
   )

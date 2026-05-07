@@ -67,18 +67,9 @@ export default function Services() {
 
   return (
     <div className="space-y-8 mt-2">
-      <div className="flex items-center justify-center gap-6 mb-12">
-        <Image
-          src="/dodoservice.jpg"
-          alt="Services"
-          width={80}
-          height={80}
-          className="rounded-full shadow-lg"
-        />
-        <h1 className="text-4xl md:text-5xl font-bold text-center">
-          Our Services
-        </h1>
-      </div>
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-uber-black mb-12">
+        Services
+      </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-y-12">
         {services.map((service, index) => (
@@ -86,21 +77,21 @@ export default function Services() {
             key={index}
             className="group relative flex flex-col items-center text-center"
           >
-            <div className="relative w-32 h-32 mb-3 transform transition-all duration-300 group-hover:scale-110">
+            <div className="relative w-32 h-32 mb-3 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={service.image}
                 alt={service.name}
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                className="rounded-full object-cover transition-all duration-300 group-hover:shadow-lg"
+                className="rounded-full object-cover"
               />
-              <div className="absolute inset-0 rounded-full bg-blue-900 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-full bg-uber-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             </div>
-            <h2 className="text-lg font-semibold mb-2 text-purple-700 transition-colors duration-300 group-hover:text-purple-900">
+            <h2 className="text-base md:text-lg font-bold mb-2 text-uber-black tracking-tight">
               {service.name}
             </h2>
-            <div className="absolute top-[85%] opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-b from-purple-50 to-white shadow-xl rounded-lg p-4 z-10 w-72 transform -translate-x-1/2 left-1/2 border-2 border-purple-200 backdrop-blur-sm">
-              <p className="text-gray-900 text-base font-medium">
+            <div className="absolute top-[85%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-uber-white shadow-uber-elevated rounded-lg p-4 z-10 w-72 transform -translate-x-1/2 left-1/2">
+              <p className="text-sm text-body-gray leading-relaxed">
                 {service.description}
               </p>
             </div>
